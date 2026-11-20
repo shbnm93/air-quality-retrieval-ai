@@ -2,10 +2,11 @@ from pathlib import Path
 import pandas as pd
 
 
-RAW_DIR = Path("data/raw")
+ROOT = Path(__file__).resolve().parents[1]
+RAW_DIR = ROOT / "data" / "raw"
 
 
-def load_air_quality_data():
+def load_air_quality_data(verbose=True):
     """Load and combine Beijing air-quality CSV files."""
 
     # Step 1: Find station files
@@ -16,7 +17,8 @@ def load_air_quality_data():
             "No station CSV files found in data/raw/"
         )
 
-    print(f"Found {len(files)} CSV files")
+    if verbose:
+        print(f"Found {len(files)} CSV files")
 
     # Step 2: Read each file
     dataframes = []
@@ -24,7 +26,8 @@ def load_air_quality_data():
     for file in files:
         df = pd.read_csv(file)
 
-        print(f"Loading {file.name}: {len(df)} rows")
+        if verbose:
+            print(f"Loading {file.name}: {len(df)} rows")
 
         dataframes.append(df)
 

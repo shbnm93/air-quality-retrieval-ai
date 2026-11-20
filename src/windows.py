@@ -26,6 +26,9 @@ def make_windows(df, history=24):
 
         group = group.sort_values("datetime")
 
+        if group["datetime"].duplicated().any():
+            raise ValueError(f"Duplicate timestamps found for station {station}")
+
         values = group["PM2.5"].to_numpy(dtype=float)
         times = group["datetime"].to_numpy(
             dtype="datetime64[ns]"

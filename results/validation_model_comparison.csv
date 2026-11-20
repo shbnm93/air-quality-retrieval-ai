@@ -1,0 +1,6 @@
+model,split,n,MAE,RMSE
+Ridge,validation_subset,2000,10.122948695999373,20.593446467438763
+Persistence,validation_subset,2000,10.133,20.67571038682831
+GradientBoosting,validation_subset,2000,10.306892386346668,22.409869399802734
+Ridge_plus_retrieved_residuals,validation_subset,2000,11.288383086510725,20.759755653070943
+Historical_kNN,validation_subset,2000,15.899379999999999,29.281164355264288

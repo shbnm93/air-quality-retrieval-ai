@@ -1,0 +1,22 @@
+{
+  "dataset": "UCI Beijing Multi-Site Air Quality",
+  "history_hours": 24,
+  "forecast_horizon_hours": 1,
+  "train_end_exclusive": "2015-03-01",
+  "validation_end_exclusive": "2016-03-01",
+  "seed": 42,
+  "training_windows": 186115,
+  "validation_windows": 87373,
+  "new_experiment_uses_test_for_selection": false,
+  "ridge_alpha_selected_by_validation_mae": 0.1,
+  "ridge_alpha_maes": {
+    "0.1": 9.677237168677761,
+    "10.0": 9.67723735390963,
+    "1000.0": 9.677255876693474
+  },
+  "gradient_boosting_training_samples": 100000,
+  "retrieval_library_samples": 15000,
+  "validation_subset_samples": 2000,
+  "retrieval_library_source": "training_only",
+  "limitations": "Single validation period; random deterministic subset for expensive comparisons; no final test model selection."
+}
