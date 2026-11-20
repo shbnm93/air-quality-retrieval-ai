@@ -12,3 +12,6 @@ data/processed/
 !.env.example
 *.pem
 *.key
+
+# Regenerable prediction outputs
+results/validation_predictions.csv
